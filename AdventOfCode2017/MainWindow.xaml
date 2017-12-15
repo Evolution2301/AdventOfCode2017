@@ -1,0 +1,47 @@
+﻿<Window x:Class="AdventOfCode2017.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdventOfCode2017"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="380">
+    <Grid>
+        <TextBox x:Name="input_tb" Margin="10,10,10,0" Text="" VerticalAlignment="Top" Height="131" AcceptsReturn="True" TextWrapping="NoWrap" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"/>
+        <TextBox x:Name="output_tb" Height="23" Margin="10,141,10,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True"/>
+        <Button x:Name="d1p1" Content="Day1 P1" HorizontalAlignment="Left" Margin="10,169,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d1p2" Content="Day1 P2" HorizontalAlignment="Left" Margin="80,169,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d2p1" Content="Day2 P1" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d2p2" Content="Day2 P2" HorizontalAlignment="Left" Margin="80,199,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d3p1" Content="Day3 P1" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d3p2" Content="Day3 P2" HorizontalAlignment="Left" Margin="80,229,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d4p1" Content="Day4 P1" HorizontalAlignment="Left" Margin="10,259,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d4p2" Content="Day4 P2" HorizontalAlignment="Left" Margin="80,259,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d5p1" Content="Day5 P1" HorizontalAlignment="Left" Margin="10,289,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d5p2" Content="Day5 P2" HorizontalAlignment="Left" Margin="80,289,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d6p1" Content="Day6 P1" HorizontalAlignment="Left" Margin="10,319,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d6p2" Content="Day6 P2" HorizontalAlignment="Left" Margin="80,319,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d7p1" Content="Day7 P1" HorizontalAlignment="Left" Margin="10,349,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d7p2" Content="Day7 P2" HorizontalAlignment="Left" Margin="80,349,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d8p1" Content="Day8 P1" HorizontalAlignment="Left" Margin="10,379,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d8p2" Content="Day8 P2" HorizontalAlignment="Left" Margin="80,379,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+
+
+        <Button x:Name="d9p1" Content="Day9 P1" HorizontalAlignment="Left" Margin="210,169,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d9p2" Content="Day9 P2" HorizontalAlignment="Left" Margin="280,169,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d10p1" Content="Day10 P1" HorizontalAlignment="Left" Margin="210,199,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d10p2" Content="Day10 P2" HorizontalAlignment="Left" Margin="280,199,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d11p1" Content="Day11 P1" HorizontalAlignment="Left" Margin="210,229,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d11p2" Content="Day11 P2" HorizontalAlignment="Left" Margin="280,229,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d12p1" Content="Day12 P1" HorizontalAlignment="Left" Margin="210,259,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d12p2" Content="Day12 P2" HorizontalAlignment="Left" Margin="280,259,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d13p1" Content="Day13 P1" HorizontalAlignment="Left" Margin="210,289,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d13p2" Content="Day13 P2" HorizontalAlignment="Left" Margin="280,289,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d14p1" Content="Day14 P1" HorizontalAlignment="Left" Margin="210,319,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d14p2" Content="Day14 P2" HorizontalAlignment="Left" Margin="280,319,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d15p1" Content="Day15 P1" HorizontalAlignment="Left" Margin="210,349,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d15p2" Content="Day15 P2" HorizontalAlignment="Left" Margin="280,349,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d16p1" Content="Day16 P1" HorizontalAlignment="Left" Margin="210,379,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+        <Button x:Name="d16p2" Content="Day16 P2" HorizontalAlignment="Left" Margin="280,379,0,0" VerticalAlignment="Top" Width="50" Click="bt_click"/>
+    </Grid>
+</Window>
