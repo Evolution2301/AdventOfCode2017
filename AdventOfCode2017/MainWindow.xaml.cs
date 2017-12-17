@@ -83,64 +83,94 @@ namespace AdventOfCode2017 {
                     output = new Day9().SolveP2(input);
                     break;
                 case "d10p1":
-                    output = new Day8().SolveP1(input);
+                    output = new Day10().SolveP1(input);
                     break;
                 case "d10p2":
-                    output = new Day8().SolveP2(input);
+                    output = new Day10().SolveP2(input);
                     break;
                 case "d11p1":
-                    output = new Day8().SolveP1(input);
+                    output = new Day11().SolveP1(input);
+                    break;
+                case "d11p2":
+                    output = new Day11().SolveP2(input);
+                    break;
+                case "d12p1":
+                    output = new Day12().SolveP1(input);
                     break;
                 case "d12p2":
-                    output = new Day8().SolveP2(input);
+                    output = new Day12().SolveP2(input);
                     break;
                 case "d13p1":
-                    output = new Day8().SolveP1(input);
+                    output = new Day13().SolveP1(input);
                     break;
                 case "d13p2":
-                    output = new Day8().SolveP2(input);
+                    output = new Day13().SolveP2(input);
                     break;
                 case "d14p1":
-                    output = new Day8().SolveP1(input);
+                    output = new Day14().SolveP1(input);
                     break;
                 case "d14p2":
-                    output = new Day8().SolveP2(input);
+                    output = new Day14().SolveP2(input);
                     break;
                 case "d15p1":
-                    output = new Day8().SolveP1(input);
+                    output = new Day15().SolveP1(input);
                     break;
                 case "d15p2":
-                    output = new Day8().SolveP2(input);
+                    output = new Day15().SolveP2(input);
                     break;
                 case "d16p1":
-                    output = new Day8().SolveP1(input);
+                    output = new Day16().SolveP1(input);
                     break;
                 case "d16p2":
-                    output = new Day8().SolveP2(input);
+                    output = new Day16().SolveP2(input);
                     break;
                 case "d17p1":
-                    output = new Day8().SolveP1(input);
+                    output = new Day17().SolveP1(input);
                     break;
                 case "d17p2":
-                    output = new Day8().SolveP2(input);
+                    output = new Day17().SolveP2(input);
                     break;
                 case "d18p1":
-                    output = new Day8().SolveP1(input);
+                    output = new Day18().SolveP1(input);
                     break;
                 case "d18p2":
-                    output = new Day8().SolveP2(input);
+                    output = new Day18().SolveP2(input);
                     break;
                 case "d19p1":
-                    output = new Day8().SolveP1(input);
+                    output = new Day19().SolveP1(input);
                     break;
                 case "d19p2":
-                    output = new Day8().SolveP2(input);
+                    output = new Day19().SolveP2(input);
                     break;
                 case "d20p1":
-                    output = new Day8().SolveP1(input);
+                    output = new Day20().SolveP1(input);
                     break;
                 case "d20p2":
-                    output = new Day8().SolveP2(input);
+                    output = new Day20().SolveP2(input);
+                    break;
+                case "d21p1":
+                    output = new Day21().SolveP1(input);
+                    break;
+                case "d21p2":
+                    output = new Day21().SolveP2(input);
+                    break;
+                case "d22p1":
+                    output = new Day22().SolveP1(input);
+                    break;
+                case "d22p2":
+                    output = new Day22().SolveP2(input);
+                    break;
+                case "d23p1":
+                    output = new Day23().SolveP1(input);
+                    break;
+                case "d23p2":
+                    output = new Day23().SolveP2(input);
+                    break;
+                case "d24p1":
+                    output = new Day24().SolveP1(input);
+                    break;
+                case "d24p2":
+                    output = new Day24().SolveP2(input);
                     break;
             }
 
