@@ -17,7 +17,7 @@ namespace AdventOfCode2017.Days {
                     if (smallest < 0) {
                         smallest = c;
                     } else if (smallest > c) {
-                        if (smallest > largest) {
+                        if (largest < 0) {
                             largest = smallest;
                         }
                         smallest = c;
@@ -35,9 +35,9 @@ namespace AdventOfCode2017.Days {
             int sum = 0;
             foreach (string line in lines) {
                 string[] splitted = line.Split(new char[] { '\t', ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                for (int i = 0; i < splitted.Length;i++) {
+                for (int i = 0; i < splitted.Length; i++) {
                     int num = int.Parse(splitted[i]);
-                    for(int j = 0; j < splitted.Length;j++) {
+                    for (int j = 0; j < splitted.Length; j++) {
                         if (j != i) {
                             int num2 = int.Parse(splitted[j]);
                             if (num2 % num == 0) {
@@ -47,7 +47,8 @@ namespace AdventOfCode2017.Days {
                         }
                     }
                 }
-                multibreak: continue;
+            multibreak:
+                continue;
             }
             return $"{sum}";
         }

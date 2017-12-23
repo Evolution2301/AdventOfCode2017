@@ -14,29 +14,40 @@ namespace AdventOfCode2017.Days {
             HashSet<int> connectedIds = new HashSet<int>();
             AddConnected(0, connectedIds, programs);
 
-            return connectedIds.Count + "";
+            return $"{connectedIds.Count}";
         }
 
+        /// <summary>
+        /// Create a dictionary which lists for each program to which others it is connected
+        /// </summary>
+        /// <param name="lines"></param>
+        /// <returns></returns>
         private static Dictionary<int, HashSet<int>> GetConnections(string[] lines) {
             Dictionary<int, HashSet<int>> programs = new Dictionary<int, HashSet<int>>();
             foreach (string line in lines) {
+                // line format is 'id <-> id2,id3,...'
                 string[] values = line.Split(new char[] { ' ' }, 3, StringSplitOptions.RemoveEmptyEntries);
 
+                // id of our program
                 int id = Int32.Parse(values[0].Trim());
 
+                // if we do not have it in our dictionary add it with an empty hashset
                 if (!programs.ContainsKey(id)) {
                     programs.Add(id, new HashSet<int>());
                 }
 
+                // loop through the connected programs
                 foreach (String connectedId in values[2].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)) {
                     int conId = Int32.Parse(connectedId.Trim());
+                    // store that this program is connected to our current one
                     if (!programs[id].Contains(conId)) {
                         programs[id].Add(conId);
                     }
+                    // create a key for the new program (if we do not have it) and add our current program to its list
                     if (!programs.ContainsKey(conId)) {
                         programs.Add(conId, new HashSet<int>());
-                    }
-                    if (!programs[conId].Contains(id)) {
+                        programs[conId].Add(id);
+                    } else if (!programs[conId].Contains(id)) {
                         programs[conId].Add(id);
                     }
                 }
@@ -45,6 +56,12 @@ namespace AdventOfCode2017.Days {
             return programs;
         }
 
+        /// <summary>
+        /// Adds all ids which are connected to the given id to the Hashset
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="hashSet"></param>
+        /// <param name="dictionary"></param>
         private void AddConnected(int id, HashSet<int> hashSet, Dictionary<int, HashSet<int>> dictionary) {
             if (!hashSet.Contains(id)) {
                 hashSet.Add(id);
@@ -60,8 +77,9 @@ namespace AdventOfCode2017.Days {
             Dictionary<int, HashSet<int>> programs = GetConnections(lines);
             Dictionary<int, HashSet<int>> groups = new Dictionary<int, HashSet<int>>();
 
+            // loop through all the programs and assign them all to groups
             for (int i = 0; i < programs.Keys.Count; i++) {
-                if (!IsInGroups(groups, i)) {
+                if (!IsInAGroup(groups, i)) {
                     HashSet<int> connectedIds = new HashSet<int>();
                     AddConnected(i, connectedIds, programs);
                     groups.Add(i, connectedIds);
@@ -71,11 +89,14 @@ namespace AdventOfCode2017.Days {
             return $"{groups.Keys.Count}";
         }
 
-        private bool IsInGroups(Dictionary<int, HashSet<int>> groups, int id) {
-            if (groups.ContainsKey(id)) {
-                return true;
-            }
-            return groups.Any(kv => kv.Value.Contains(id));
+        /// <summary>
+        /// Tests if the given id is in any of the existing groups
+        /// </summary>
+        /// <param name="groups"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        private bool IsInAGroup(Dictionary<int, HashSet<int>> groups, int id) {
+            return groups.ContainsKey(id) || groups.Any(kv => kv.Value.Contains(id));
         }
     }
 }

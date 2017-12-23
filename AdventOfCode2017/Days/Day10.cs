@@ -26,7 +26,45 @@ namespace AdventOfCode2017.Days {
 
             int currentPos = 0;
             int skipSize = 0;
-            foreach (int length in lenghts) {
+            KnotHash(lenghts, ref currentPos, ref skipSize);
+
+            return "" + (list[0] * list[1]);
+        }
+
+        public string SolveP2(string input) {
+            List<int> lengths = new List<int>();
+
+            foreach (char c in input.Trim()) {
+                lengths.Add(c);
+            }
+
+            lengths.Add(17);
+            lengths.Add(31);
+            lengths.Add(73);
+            lengths.Add(47);
+            lengths.Add(23);
+
+            int currentPos = 0;
+            int skipSize = 0;
+            for (int round = 0; round < 64; round++) {
+                KnotHash(lengths, ref currentPos, ref skipSize);
+            }
+
+            int[] denseHash = new int[16];
+            for (int i = 0; i < list.Count; i++) {
+                denseHash[i / 16] ^= list[i];
+            }
+
+            StringBuilder result = new StringBuilder();
+            foreach (int i in denseHash) {
+                result.Append(i.ToString("x2"));
+            }
+            return result.ToString();
+        }
+
+        private void KnotHash(List<int> lengths, ref int currentPos, ref int skipSize) {
+            for (int i = 0; i < lengths.Count; i++) {
+                int length = lengths[i];
                 List<int> subList = new List<int>();
                 for (int x = currentPos; x < currentPos + length; x++) {
                     subList.Add(list[x % list.Count]);
@@ -38,50 +76,6 @@ namespace AdventOfCode2017.Days {
                 currentPos = (currentPos + length + skipSize) % list.Count;
                 skipSize++;
             }
-
-            return "" + (list[0] * list[1]);
-        }
-
-        public string SolveP2(string input) {
-            List<int> lenghts = new List<int>();
-
-            foreach (char c in input.Trim()) {
-                lenghts.Add(c);
-            }
-
-            lenghts.Add(17);
-            lenghts.Add(31);
-            lenghts.Add(73);
-            lenghts.Add(47);
-            lenghts.Add(23);
-
-            int currentPos = 0;
-            int skipSize = 0;
-            for (int round = 0; round < 64; round++) {
-                foreach (int length in lenghts) {
-                    List<int> subList = new List<int>();
-                    for (int x = currentPos; x < currentPos + length; x++) {
-                        subList.Add(list[x % list.Count]);
-                    }
-                    subList.Reverse();
-                    for (int x = currentPos; x < currentPos + length; x++) {
-                        list[x % list.Count] = subList[x - currentPos];
-                    }
-                    currentPos = (currentPos + length + skipSize) % list.Count;
-                    skipSize++;
-                }
-            }
-
-            int[] denseHash = new int[16];
-            for (int i = 0; i < list.Count; i++) {
-                denseHash[i / 16] ^= list[i];
-            }
-
-            string result = "";
-            foreach (int i in denseHash) {
-                result += i.ToString("X2");
-            }
-            return result;
         }
     }
 }
